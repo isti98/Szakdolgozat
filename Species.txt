@@ -1,0 +1,23 @@
+Araneae - Pókok
+Coleoptera - Bogarak
+Diptera - Kétszárnyúak
+hemiptera - Félfedelesszárnyúak
+hymenoptera - Hangyák, Méhek, Darazsak
+Lepidoptera - Lepkék, Pillangók
+Odonata - Szitakötők, Lánylegyek
+----------------------------------------------
+* Araneae: Spiders
+
+* Coleoptera: Beetles
+
+* Diptera: True flies, wich includes mosquitoes, midges, crane flies etc.
+
+* Hemiptera: True bugs, which includes aphids, cicadas, planthoppers, shield bugs etc.
+
+* Hymenoptera: Ants, bees and wasps
+
+* Lepidoptera: Butterflies and moths
+
+* Odonata: Dragonflies and damselflies
+
+
