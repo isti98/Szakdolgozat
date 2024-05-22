@@ -84,7 +84,11 @@ class Application(QtWidgets.QMainWindow):
 
     def loadModel(self):
         self.detectBug.load(self.ui.models.selectedModel()[1])
-        
+        if(self.detectBug.modelLoaded == False):
+            self.ui.models.delete()
+            self.MessageBox("Error", "The model has been deleted since it has been added it.")
+
+            
 
     def deleteModel(self):
         self.ui.models.delete()

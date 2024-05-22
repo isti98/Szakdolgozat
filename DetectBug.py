@@ -3,15 +3,18 @@ from ultralytics import YOLO
 
 import os
 
-
 class DetectBug():
     def __init__(self):
         self.model = None
         self.modelLoaded = False
 
     def load(self, modelPath):
-         self.model = YOLO(modelPath)
-         self.modelLoaded = True
+        if(os.path.exists(modelPath)):
+            self.model = YOLO(modelPath)
+            self.modelLoaded = True
+        else:
+            self.modelLoaded=False
+        return self.modelLoaded
 
     def run(self, projectPath, imageName):
         detectedImage = None
@@ -19,7 +22,7 @@ class DetectBug():
         source = os.path.join(workingDir, projectPath, imageName)
         target = os.path.join(workingDir, projectPath)
         if self.modelLoaded and  os.path.exists(source):
-            detectedImage = self.model.predict(source=source, project=target, save=True, exist_ok=True, imgsz=640, conf=0.25)[0].save_dir
+            detectedImage = self.model.predict(source=source, project=target, save=True, exist_ok=True, imgsz=640, conf=0.5)[0].save_dir
 
         return detectedImage
         
@@ -34,7 +37,7 @@ class DetectBug():
                     source = os.path.join(projectPath, i)
                     images.append(source)
 
-            detectedImage = self.model.predict(source=images, project=target, save=True, exist_ok=True, imgsz=640, conf=0.25)[0].save_dir
+            detectedImage = self.model.predict(source=images, project=target, save=True, exist_ok=True, imgsz=640, conf=0.5)[0].save_dir
         
         return detectedImage 
 
